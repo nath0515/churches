@@ -21,6 +21,50 @@
     }
   }, { passive: true });
 
+  document.querySelectorAll('.service-card, .community-card, .reach-card, .video-card, .sermon-card, .event-card').forEach(card => {
+    if (card.dataset.flipInitialized === 'true') return;
+
+    const frontContent = card.innerHTML;
+    const frontFace = document.createElement('div');
+    frontFace.className = 'card-flip__face card-flip__face--front';
+    frontFace.innerHTML = frontContent;
+
+    const backFace = document.createElement('div');
+    backFace.className = 'card-flip__face card-flip__face--back';
+    backFace.innerHTML = `
+      <span class="event-date-badge">More Info</span>
+      <h5>Details Coming Soon</h5>
+      <p>Add notes, directions, registration info, or a short recap here.</p>
+    `;
+
+    const inner = document.createElement('div');
+    inner.className = 'card-flip__inner';
+    inner.appendChild(frontFace);
+    inner.appendChild(backFace);
+
+    card.innerHTML = '';
+    card.appendChild(inner);
+    card.classList.add('card-flip');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'Flip card');
+    card.setAttribute('aria-pressed', 'false');
+    card.dataset.flipInitialized = 'true';
+
+    const toggleFlip = () => {
+      const isFlipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(isFlipped));
+    };
+
+    card.addEventListener('click', toggleFlip);
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleFlip();
+      }
+    });
+  });
+
   // Attach reveal classes
   // Section headings
   document.querySelectorAll('.section-eyebrow, .section-title, .section-lead').forEach(el => el.classList.add('reveal'));
