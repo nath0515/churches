@@ -140,13 +140,34 @@
 
     /* HERO SECTION */
     .hero-section {
+      position: relative;
       min-height: 92vh;
-      background:
-        linear-gradient(to bottom, rgba(12,31,20,0.72) 0%, rgba(12,31,20,0.42) 60%, rgba(243,247,241,1) 100%),
-        url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=1600&q=80') center/cover no-repeat;
+      background: linear-gradient(to bottom, rgba(12,31,20,0.72) 0%, rgba(12,31,20,0.42) 60%, rgba(243,247,241,1) 100%);
       display: flex;
       align-items: center;
       padding: 7rem 0 5rem;
+      overflow: hidden;
+    }
+
+    .hero-section .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-section .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(12,31,20,0.72) 0%, rgba(12,31,20,0.42) 60%, rgba(243,247,241,1) 100%);
+      z-index: 1;
+    }
+
+    .hero-section .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-section .hero-eyebrow {

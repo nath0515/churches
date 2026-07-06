@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Give — Victory Baptist Church</title>
+  <link rel="icon" type="image/png" href="src/logo.png" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Scoped styles for the Give page — reuses the site's gold/serif language */
+    .give-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      height: 100%;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .give-card:hover {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+    .give-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(184,147,61,0.12);
+      color: var(--gold, #b8933d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.1rem;
+    }
+    .account-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.1);
+      font-size: 0.93rem;
+    }
+    .account-row:last-child { border-bottom: none; }
+    .account-label {
+      color: #8a8a8a;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .account-value {
+      font-weight: 600;
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+    }
+    .copy-btn {
+      background: none;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 8px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { border-color: var(--gold, #b8933d); color: var(--gold, #b8933d); }
+    .copy-btn.copied { background: var(--gold, #b8933d); border-color: var(--gold, #b8933d); color: #fff; }
+
+    .qr-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: center;
+      height: 100%;
+    }
+    .qr-card img {
+      width: 190px;
+      height: 190px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .qr-note {
+      font-size: 0.8rem;
+      color: #8a8a8a;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-church" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="src/logo.png" alt="Victory Baptist Church Logo" class="navbar-logo" />
+      <span class="navbar-brand-text">Victory Baptist Church</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-3 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#events">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#communities">Communities</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#sermons">Sermons</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#reach">Our Reach</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="give.html" class="btn btn-give">Give</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero-section" id="home">
+  <div class="container">
+    <div class="col-lg-8">
+      <p class="hero-eyebrow">Faithful Giving</p>
+      <h1>Every Gift<br/>Moves the<br/>Mission Forward</h1>
+      <p class="hero-verse">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."</p>
+      <p class="hero-ref">— 2 Corinthians 9:7</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="#ways-to-give" class="btn-hero-primary btn">See Ways to Give</a>
+        <a href="#qr-give" class="btn-hero-outline btn">Scan a QR Code</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WAYS TO GIVE -->
+<section class="services-section" id="ways-to-give">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Choose What Works for You</p>
+      <h2 class="section-title">Ways to Give</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+      <p class="section-lead">Whether it's tithes, offerings, or a gift toward missions, here are the simplest ways to give to Victory Baptist Church.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-bank"></i></div>
+          <h5>Bank Transfer</h5>
+          <p>Send directly to one of our official church bank accounts listed below.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-qr-code"></i></div>
+          <h5>GCash / Maya QR</h5>
+          <p>Scan our QR code with your e-wallet app for an instant transfer.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-envelope-paper"></i></div>
+          <h5>Cash or Check</h5>
+          <p>Drop your offering in the giving box during any Sunday service.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-headset"></i></div>
+          <h5>Need Help?</h5>
+          <p>Message our finance team and we'll walk you through any option.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BANK ACCOUNTS -->
+<section class="events-section" id="bank-accounts">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Direct Deposit</p>
+      <h2 class="section-title">Official Bank Accounts</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+      <p class="section-lead">Please double-check account details before transferring, and keep your deposit slip or reference number for your records.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- BDO -->
+      <div class="col-md-6 col-lg-4">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-building"></i></div>
+          <h5>BDO — Naic Branch</h5>
+          <div class="account-row">
+            <span class="account-label">Account Name</span>
+            <span class="account-value">Victory Baptist Church Inc.</span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">Account Number</span>
+            <span class="account-value" data-copy="0012-3456-7890">0012 3456 7890
+              <button class="copy-btn" data-copy-target="0012-3456-7890">Copy</button>
+            </span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">Account Type</span>
+            <span class="account-value">Savings</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BPI -->
+      <div class="col-md-6 col-lg-4">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-building"></i></div>
+          <h5>BPI — Cavite Branch</h5>
+          <div class="account-row">
+            <span class="account-label">Account Name</span>
+            <span class="account-value">Victory Baptist Church Inc.</span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">Account Number</span>
+            <span class="account-value" data-copy="1234-5678-90">1234 5678 90
+              <button class="copy-btn" data-copy-target="1234-5678-90">Copy</button>
+            </span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">Account Type</span>
+            <span class="account-value">Checking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrobank -->
+      <div class="col-md-6 col-lg-4">
+        <div class="give-card">
+          <div class="give-card-icon"><i class="bi bi-building"></i></div>
+          <h5>Metrobank — Naic Branch</h5>
+          <div class="account-row">
+            <span class="account-label">Account Name</span>
+            <span class="account-value">Victory Baptist Church Inc.</span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">Account Number</span>
+            <span class="account-value" data-copy="9988-7766-55">9988 7766 55
+              <button class="copy-btn" data-copy-target="9988-7766-55">Copy</button>
+            </span>
+          </div>
+          <div class="account-row">
+            <span class="account-label">Account Type</span>
+            <span class="account-value">Savings</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- QR CODES -->
+<section class="communities-section" id="qr-give">
+  <div class="container">
+    <div class="text-center mb-2">
+      <p class="section-eyebrow">Instant Giving</p>
+      <h2 class="section-title">Scan to Give</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+    </div>
+    <p class="section-lead text-center mb-5">Open your GCash, Maya, or banking app, tap "Scan QR," and give in seconds.</p>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="qr-card">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&color=2b2b2b&data=GCASH-VICTORYBAPTIST-09171234567" alt="GCash QR code for giving"/>
+          <h6 class="mb-1">GCash</h6>
+          <p class="mb-0" style="font-size:0.85rem; color:#6b6b6b;">Victory Baptist Church</p>
+          <p class="qr-note">09171234567</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="qr-card">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&color=2b2b2b&data=MAYA-VICTORYBAPTIST-09181234567" alt="Maya QR code for giving"/>
+          <h6 class="mb-1">Maya</h6>
+          <p class="mb-0" style="font-size:0.85rem; color:#6b6b6b;">Victory Baptist Church</p>
+          <p class="qr-note">09181234567</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="qr-card">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&color=2b2b2b&data=BDO-QRPH-VICTORYBAPTIST" alt="BDO QR Ph code for giving"/>
+          <h6 class="mb-1">BDO QR Ph</h6>
+          <p class="mb-0" style="font-size:0.85rem; color:#6b6b6b;">Victory Baptist Church</p>
+          <p class="qr-note">Any QR Ph–enabled app</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center mt-4" style="font-size:0.85rem; color:#8a8a8a;">
+      <i class="bi bi-info-circle me-1"></i>
+      Sample QR codes shown — replace the image links with your official GCash / Maya / bank-issued QR codes before publishing.
+    </p>
+  </div>
+</section>
+
+
+<!-- WHY WE GIVE -->
+<section class="about-banner" id="why-give">
+  <div class="container">
+    <div class="col-lg-7">
+      <p class="section-eyebrow" style="color:var(--gold-light);">A Heart of Worship</p>
+      <h2>Giving Is an Act<br/>of Worship</h2>
+      <p class="banner-verse">"Bring the whole tithe into the storehouse, that there may be food in my house."</p>
+      <p class="banner-ref">— Malachi 3:10</p>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.97rem; max-width:520px; margin-bottom:2rem;">Every peso given supports our weekly services, community outreach, missions abroad, and the day-to-day ministries that keep our church family growing. Thank you for partnering with us.</p>
+      <a href="#bank-accounts" class="btn-about btn">View Bank Details</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="sermons-section" id="give-faq">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Good to Know</p>
+      <h2 class="section-title">Giving FAQs</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="giveFaqAccordion">
+
+          <div class="accordion-item mb-3" style="border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.08);">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Is my gift tax-deductible?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#giveFaqAccordion">
+              <div class="accordion-body">Victory Baptist Church is a registered religious organization. Contact our finance office for an official receipt for tax purposes.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3" style="border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.08);">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How do I get a receipt after a bank transfer?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#giveFaqAccordion">
+              <div class="accordion-body">Send a screenshot of your deposit slip or transfer confirmation to our finance team's email or Facebook page, and we'll issue an official receipt.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3" style="border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.08);">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Can I set up recurring giving?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#giveFaqAccordion">
+              <div class="accordion-body">Yes — most banking and e-wallet apps let you schedule automatic transfers. Set the frequency and amount that fits your budget.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer" id="giving">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Brand & Social -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-brand">
+          <span class="brand-cross">&#10011;</span>
+          Victory Baptist
+        </div>
+        <p style="font-size:0.88rem; margin-bottom:1.2rem;">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
+        <a href="give.html" class="btn-giving btn mb-3">
+          <i class="bi bi-heart-fill"></i> Give Online
+        </a>
+        <div class="social-links">
+          <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" title="Spotify"><i class="bi bi-spotify"></i></a>
+          <a href="#" title="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="#" title="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact Us</h6>
+        <div class="footer-contact-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>123 Faith Avenue, Brgy. Timalan,<br/>Naic, Cavite 4110, Philippines</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+63 (046) 123-4567</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>hello@victorybaptist.ph</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-clock-fill"></i>
+          <span>Office: Mon–Fri, 9:00 AM – 5:00 PM</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <a href="index.html#services">Service Times</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#communities">Communities</a>
+        <a href="index.html#sermons">Sermons</a>
+        <a href="index.html#reach">Missions</a>
+        <a href="about.html">About Us</a>
+        <a href="give.html">Give</a>
+        <a href="#">Volunteer</a>
+      </div>
+
+      <!-- Resources -->
+      <div class="col-lg-2 col-md-6">
+        <h6>Resources</h6>
+        <a href="#">Bible Reading Plan</a>
+        <a href="#">Sermon Notes</a>
+        <a href="#">Podcast</a>
+        <a href="#">Worship Playlist</a>
+        <a href="#">Baptism Info</a>
+        <a href="#">Kids Resources</a>
+        <a href="#">Marriage Resources</a>
+        <a href="#">Financial Stewardship</a>
+      </div>
+
+      <!-- Service Times -->
+      <div class="col-lg-2 col-md-6">
+        <h6>Service Times</h6>
+        <div style="font-size:0.85rem; margin-bottom:0.4rem;">
+          <strong style="color:rgba(255,255,255,0.85);">Sunday</strong><br/>
+          8:00 AM &amp; 10:30 AM
+        </div>
+        <div style="font-size:0.85rem; margin-bottom:0.4rem; margin-top:0.75rem;">
+          <strong style="color:rgba(255,255,255,0.85);">Wednesday</strong><br/>
+          7:00 PM — Prayer Night
+        </div>
+        <div style="font-size:0.85rem; margin-top:0.75rem;">
+          <strong style="color:rgba(255,255,255,0.85);">Friday</strong><br/>
+          6:30 PM — Youth Night
+        </div>
+        <div style="font-size:0.85rem; margin-top:0.75rem;">
+          <i class="bi bi-camera-video" style="color:var(--gold);"></i>
+          Live stream every Sunday
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider"/>
+    <div class="row footer-bottom align-items-center">
+      <div class="col-md-6">
+        &copy; 2026 Victory Baptist Church. All rights reserved.
+      </div>
+      <div class="col-md-6 text-md-end" style="display:flex; gap:1.2rem; justify-content: flex-end; flex-wrap:wrap;">
+        <a href="#" style="font-size:0.78rem; color:rgba(255,255,255,0.35);">Privacy Policy</a>
+        <a href="#" style="font-size:0.78rem; color:rgba(255,255,255,0.35);">Terms of Use</a>
+        <a href="#" style="font-size:0.78rem; color:rgba(255,255,255,0.35);">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+<!-- Copy-to-clipboard for account numbers -->
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const value = btn.getAttribute('data-copy-target');
+      navigator.clipboard.writeText(value.replace(/-/g, '')).then(function () {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1800);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
