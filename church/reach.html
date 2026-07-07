@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Reach — Victory Baptist Church</title>
+  <link rel="icon" type="image/png" href="src/logo.png" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Scoped styles for the Our Reach page */
+    .approach-card {
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius:16px;
+      padding:2rem;
+      height:100%;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .approach-card:hover { box-shadow:0 12px 30px rgba(0,0,0,0.08); transform:translateY(-3px); }
+    .approach-icon {
+      width:52px; height:52px; border-radius:50%;
+      background:rgba(184,147,61,0.12); color:var(--gold,#b8933d);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; margin-bottom:1.1rem;
+    }
+    .partner-quote {
+      background:#fff;
+      border-left:4px solid var(--gold,#b8933d);
+      border-radius:0 12px 12px 0;
+      padding:1.75rem 2rem;
+      font-style:italic;
+      color:#4a4a4a;
+      max-width:760px;
+      margin:0 auto;
+    }
+    .reach-map-note {
+      font-size:0.85rem;
+      color:#8a8a8a;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-church" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="src/logo.png" alt="Victory Baptist Church Logo" class="navbar-logo" />
+      <span class="navbar-brand-text">Victory Baptist Church</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-3 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#events">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#communities">Communities</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#sermons">Sermons</a></li>
+        <li class="nav-item"><a class="nav-link active" href="reach.html">Our Reach</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="give.html" class="btn btn-give">Give</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero-section" id="home">
+  <div class="container">
+    <div class="col-lg-8">
+      <p class="hero-eyebrow">Beyond These Walls</p>
+      <h1>Carrying the Gospel<br/>to the Ends of<br/>the Earth</h1>
+      <p class="hero-verse">"You will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."</p>
+      <p class="hero-ref">— Acts 1:8</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="#reach-map" class="btn-hero-primary btn">See Where We Serve</a>
+        <a href="give.html" class="btn-hero-outline btn">Support a Mission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="reach-section" id="reach-stats">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Global Impact</p>
+      <h2 class="section-title">Our Reach in Numbers</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+      <p class="section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="row g-0 text-center">
+      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">12</div><div class="stat-label">Partner Nations</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">48</div><div class="stat-label">Mission Partners</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">5K+</div><div class="stat-label">Lives Touched</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">30+</div><div class="stat-label">Years of Service</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW WE SERVE -->
+<section class="services-section" id="how-we-serve">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Our Approach</p>
+      <h2 class="section-title">How We Serve the Nations</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+      <p class="section-lead">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-icon"><i class="bi bi-building-add"></i></div>
+          <h5>Church Planting</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-icon"><i class="bi bi-heart-pulse"></i></div>
+          <h5>Relief &amp; Development</h5>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-icon"><i class="bi bi-people"></i></div>
+          <h5>Discipleship &amp; Training</h5>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-icon"><i class="bi bi-book"></i></div>
+          <h5>Education Sponsorship</h5>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- REACH MAP / MISSION FIELDS -->
+<section class="reach-section" id="reach-map">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Where We Serve</p>
+      <h2 class="section-title">Our Mission Fields</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+      <p class="section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Philippines -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card reach-card">
+          <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=75" alt="Philippines"/>
+          <div class="card-body">
+            <div class="reach-flag">🇵🇭</div>
+            <h5>Philippines — Home Base</h5>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cambodia -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card reach-card">
+          <img src="https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=600&q=75" alt="Cambodia"/>
+          <div class="card-body">
+            <div class="reach-flag">🇰🇭</div>
+            <h5>Cambodia — Church Planting</h5>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Indonesia -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card reach-card">
+          <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=75" alt="Indonesia"/>
+          <div class="card-body">
+            <div class="reach-flag">🇮🇩</div>
+            <h5>Indonesia — Relief &amp; Discipleship</h5>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          </div>
+        </div>
+      </div>
+      <!-- India -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card reach-card">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=75" alt="India"/>
+          <div class="card-body">
+            <div class="reach-flag">🇮🇳</div>
+            <h5>India — Education Sponsorship</h5>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Africa -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card reach-card">
+          <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=600&q=75" alt="Africa"/>
+          <div class="card-body">
+            <div class="reach-flag">🌍</div>
+            <h5>East Africa — Clean Water Initiative</h5>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Online -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card reach-card">
+          <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&q=75" alt="Online"/>
+          <div class="card-body">
+            <div class="reach-flag">🌐</div>
+            <h5>Worldwide — Online Church</h5>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center reach-map-note mt-4">
+      <i class="bi bi-info-circle me-1"></i> Sample regions shown — swap in your church's actual partner countries and photos.
+    </p>
+  </div>
+</section>
+
+
+<!-- PARTNER VOICE -->
+<section class="about-banner" id="partner-voice">
+  <div class="container">
+    <div class="col-lg-8 mx-auto text-center">
+      <p class="section-eyebrow" style="color:var(--gold-light);">From the Field</p>
+      <h2 class="mb-4">A Word From Our Partners</h2>
+      <div class="partner-quote" style="background:rgba(255,255,255,0.06); border-left-color:var(--gold-light); color:rgba(255,255,255,0.85);">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam."
+        <div class="mt-3" style="font-style:normal; font-weight:600; color:#fff;">— Pastor Sopheak, Cambodia Church Plant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GET INVOLVED -->
+<section class="events-section" id="get-involved">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Join the Mission</p>
+      <h2 class="section-title">Ways to Get Involved</h2>
+      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
+      <p class="section-lead">Nam libero tempore cum soluta nobis eligendi optio cumque nihil impedit quo minus id quod maxime.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="approach-card text-center">
+          <div class="approach-icon mx-auto"><i class="bi bi-airplane"></i></div>
+          <h5>Go on a Mission Trip</h5>
+          <p>Join a short-term team serving alongside our partners overseas.</p>
+          <a href="#" class="btn btn-outline-secondary rounded-pill px-4 mt-2">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="approach-card text-center">
+          <div class="approach-icon mx-auto"><i class="bi bi-cash-coin"></i></div>
+          <h5>Give Toward Missions</h5>
+          <p>Your gift directly funds church planting, relief, and education abroad.</p>
+          <a href="give.html" class="btn btn-outline-secondary rounded-pill px-4 mt-2">Give Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="approach-card text-center">
+          <div class="approach-icon mx-auto"><i class="bi bi-hand-thumbs-up"></i></div>
+          <h5>Pray for the Nations</h5>
+          <p>Get our monthly prayer list for the countries and partners we serve.</p>
+          <a href="#" class="btn btn-outline-secondary rounded-pill px-4 mt-2">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer" id="giving">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Brand & Social -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-brand">
+          <span class="brand-cross">&#10011;</span>
+          Victory Baptist
+        </div>
+        <p style="font-size:0.88rem; margin-bottom:1.2rem;">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
+        <a href="give.html" class="btn-giving btn mb-3">
+          <i class="bi bi-heart-fill"></i> Give Online
+        </a>
+        <div class="social-links">
+          <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" title="Spotify"><i class="bi bi-spotify"></i></a>
+          <a href="#" title="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="#" title="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact Us</h6>
+        <div class="footer-contact-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>123 Faith Avenue, Brgy. Timalan,<br/>Naic, Cavite 4110, Philippines</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+63 (046) 123-4567</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>hello@victorybaptist.ph</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-clock-fill"></i>
+          <span>Office: Mon–Fri, 9:00 AM – 5:00 PM</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <a href="index.html#services">Service Times</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#communities">Communities</a>
+        <a href="index.html#sermons">Sermons</a>
+        <a href="reach.html">Missions</a>
+        <a href="about.html">About Us</a>
+        <a href="#">Prayer Request</a>
+        <a href="#">Volunteer</a>
+      </div>
+
+      <!-- Resources -->
+      <div class="col-lg-2 col-md-6">
+        <h6>Resources</h6>
+        <a href="#">Bible Reading Plan</a>
+        <a href="#">Sermon Notes</a>
+        <a href="#">Podcast</a>
+        <a href="#">Worship Playlist</a>
+        <a href="#">Baptism Info</a>
+        <a href="#">Kids Resources</a>
+        <a href="#">Marriage Resources</a>
+        <a href="#">Financial Stewardship</a>
+      </div>
+
+      <!-- Service Times -->
+      <div class="col-lg-2 col-md-6">
+        <h6>Service Times</h6>
+        <div style="font-size:0.85rem; margin-bottom:0.4rem;">
+          <strong style="color:rgba(255,255,255,0.85);">Sunday</strong><br/>
+          8:00 AM &amp; 10:30 AM
+        </div>
+        <div style="font-size:0.85rem; margin-bottom:0.4rem; margin-top:0.75rem;">
+          <strong style="color:rgba(255,255,255,0.85);">Wednesday</strong><br/>
+          7:00 PM — Prayer Night
+        </div>
+        <div style="font-size:0.85rem; margin-top:0.75rem;">
+          <strong style="color:rgba(255,255,255,0.85);">Friday</strong><br/>
+          6:30 PM — Youth Night
+        </div>
+        <div style="font-size:0.85rem; margin-top:0.75rem;">
+          <i class="bi bi-camera-video" style="color:var(--gold);"></i>
+          Live stream every Sunday
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider"/>
+    <div class="row footer-bottom align-items-center">
+      <div class="col-md-6">
+        &copy; 2026 Victory Baptist Church. All rights reserved.
+      </div>
+      <div class="col-md-6 text-md-end" style="display:flex; gap:1.2rem; justify-content: flex-end; flex-wrap:wrap;">
+        <a href="#" style="font-size:0.78rem; color:rgba(255,255,255,0.35);">Privacy Policy</a>
+        <a href="#" style="font-size:0.78rem; color:rgba(255,255,255,0.35);">Terms of Use</a>
+        <a href="#" style="font-size:0.78rem; color:rgba(255,255,255,0.35);">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

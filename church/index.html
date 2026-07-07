@@ -14,7 +14,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 
-
+  <style>
+    /* Video modal player */
+    #videoPlayerModal .modal-content { background:#000; border:none; border-radius:14px; overflow:hidden; }
+    #videoPlayerModal .modal-header { border-bottom:none; position:absolute; right:0; z-index:5; }
+    #videoPlayerModal .btn-close { filter:invert(1); opacity:0.85; }
+    #videoPlayerModal .ratio { background:#000; }
+    .video-card { cursor:pointer; }
+    .video-load-placeholder {
+      height: 180px;
+      border-radius: 12px 12px 0 0;
+      background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+      background-size: 400% 100%;
+      animation: shimmer 1.4s ease infinite;
+    }
+    @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }
+  </style>
 </head>
 
 <body>
@@ -22,11 +37,11 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-church" id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.html">
       <img src="src/logo.png" alt="Victory Baptist Church Logo" class="navbar-logo" />
       <span class="navbar-brand-text">Victory Baptist Church</span>
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navContent">
@@ -36,9 +51,9 @@
         <li class="nav-item"><a class="nav-link" href="#communities">Communities</a></li>
         <li class="nav-item"><a class="nav-link" href="#sermons">Sermons</a></li>
         <li class="nav-item"><a class="nav-link" href="#reach">Our Reach</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
         <li class="nav-item ms-lg-2">
-          <a href="#giving" class="btn btn-give">Give</a>
+          <a href="give.html" class="btn btn-give">Give</a>
         </li>
       </ul>
     </div>
@@ -60,7 +75,7 @@
       <p class="hero-ref">— Matthew 11:28</p>
       <div class="d-flex flex-wrap gap-3">
         <a href="#services" class="btn-hero-primary btn">Plan Your Visit</a>
-        <a href="#about" class="btn-hero-outline btn">Learn About Us</a>
+        <a href="about.html" class="btn-hero-outline btn">Learn About Us</a>
       </div>
     </div>
   </div>
@@ -136,7 +151,7 @@
       <p class="banner-verse">"For where two or three gather in my name, there am I with them."</p>
       <p class="banner-ref">— Matthew 18:20</p>
       <p style="color:rgba(255,255,255,0.8); font-size:0.97rem; max-width:520px; margin-bottom:2rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <a href="#" class="btn-about btn">Our Story</a>
+      <a href="about.html" class="btn-about btn">Our Story</a>
     </div>
   </div>
 </section>
@@ -162,7 +177,7 @@
           </div>
           <div class="card-body">
             <div class="event-meta"><i class="bi bi-geo-alt"></i> Camp Elim, Tagaytay</div>
-            <h5>Summer Retreat 2025</h5>
+            <h5>Summer Retreat 2026</h5>
             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
           </div>
         </div>
@@ -396,194 +411,30 @@
 
 
 <!-- REACH -->
-<section class="reach-section" id="reach">
-  <div class="container">
-    <div class="text-center mb-5">
-      <p class="section-eyebrow">Global Impact</p>
-      <h2 class="section-title">Our Reach</h2>
-      <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
-      <p class="section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-
-    <!-- Stats Row -->
-    <div class="row g-0 mb-5 text-center">
-      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">12</div><div class="stat-label">Partner Nations</div></div></div>
-      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">48</div><div class="stat-label">Mission Partners</div></div></div>
-      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">5K+</div><div class="stat-label">Lives Touched</div></div></div>
-      <div class="col-6 col-md-3"><div class="stat-block"><div class="stat-number">30+</div><div class="stat-label">Years of Service</div></div></div>
-    </div>
-
-    <div class="row g-4">
-      <!-- Philippines -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card reach-card">
-          <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=75" alt="Philippines"/>
-          <div class="card-body">
-            <div class="reach-flag">🇵🇭</div>
-            <h5>Philippines — Home Base</h5>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Cambodia -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card reach-card">
-          <img src="https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=600&q=75" alt="Cambodia"/>
-          <div class="card-body">
-            <div class="reach-flag">🇰🇭</div>
-            <h5>Cambodia — Church Planting</h5>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Indonesia -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card reach-card">
-          <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=75" alt="Indonesia"/>
-          <div class="card-body">
-            <div class="reach-flag">🇮🇩</div>
-            <h5>Indonesia — Relief & Discipleship</h5>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-          </div>
-        </div>
-      </div>
-      <!-- India -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card reach-card">
-          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=75" alt="India"/>
-          <div class="card-body">
-            <div class="reach-flag">🇮🇳</div>
-            <h5>India — Education Sponsorship</h5>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Africa -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card reach-card">
-          <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=600&q=75" alt="Africa"/>
-          <div class="card-body">
-            <div class="reach-flag">🌍</div>
-            <h5>East Africa — Clean Water Initiative</h5>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Online -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card reach-card">
-          <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&q=75" alt="Online"/>
-          <div class="card-body">
-            <div class="reach-flag">🌐</div>
-            <h5>Worldwide — Online Church</h5>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-<!-- YT -->
+
+<!-- YT (now live) -->
 <section class="engage-section" id="engage">
   <div class="container">
     <div class="text-center mb-5">
       <p class="section-eyebrow">Stay Connected</p>
       <h2 class="section-title">Engage Updates</h2>
       <div class="cross-divider"><span class="cross-icon">&#10011;</span></div>
-      <p class="section-lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem.</p>
+      <p class="section-lead">Our latest uploads, pulled straight from our YouTube channel.</p>
     </div>
 
-    <div class="row g-4">
-      <!-- Video 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1545360234-76a43eb4afe8?w=600&q=75" alt="Video"/>
-            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
-          </div>
-          <div class="card-body">
-            <p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> 4,218 views</p>
-            <h6>When God Seems Silent — Pastor David Cruz</h6>
-            <p class="video-date"><i class="bi bi-calendar3 me-1"></i> June 18, 2025</p>
-          </div>
-        </div>
-      </div>
-      <!-- Video 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=600&q=75" alt="Video"/>
-            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
-          </div>
-          <div class="card-body">
-            <p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> 2,905 views</p>
-            <h6>Victory Baptist Church Youth Worship Night — Live Recording</h6>
-            <p class="video-date"><i class="bi bi-calendar3 me-1"></i> June 14, 2025</p>
-          </div>
-        </div>
-      </div>
-      <!-- Video 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=75" alt="Video"/>
-            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
-          </div>
-          <div class="card-body">
-            <p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> 1,642 views</p>
-            <h6>Victory Baptist Church Outreach Recap: Cavite Province 2025</h6>
-            <p class="video-date"><i class="bi bi-calendar3 me-1"></i> June 10, 2025</p>
-          </div>
-        </div>
-      </div>
-      <!-- Video 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?w=600&q=75" alt="Video"/>
-            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
-          </div>
-          <div class="card-body">
-            <p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> 3,187 views</p>
-            <h6>Victory Baptist Church  Testimony: How God Restored My Family</h6>
-            <p class="video-date"><i class="bi bi-calendar3 me-1"></i> June 6, 2025</p>
-          </div>
-        </div>
-      </div>
-      <!-- Video 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=75" alt="Video"/>
-            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
-          </div>
-          <div class="card-body">
-            <p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> 987 views</p>
-            <h6>Daily Devotional: Psalms 23 — Finding Rest</h6>
-            <p class="video-date"><i class="bi bi-calendar3 me-1"></i> June 3, 2025</p>
-          </div>
-        </div>
-      </div>
-      <!-- Video 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=75" alt="Video"/>
-            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
-          </div>
-          <div class="card-body">
-            <p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> 2,210 views</p>
-            <h6>Summer Retreat Highlights — God Moved!</h6>
-            <p class="video-date"><i class="bi bi-calendar3 me-1"></i> May 28, 2025</p>
-          </div>
-        </div>
-      </div>
+    <div class="row g-4" id="youtubeVideosContainer">
+      <!-- JS fills this in with the channel's latest uploads -->
+      <div class="col-md-6 col-lg-4"><div class="card video-card"><div class="video-load-placeholder"></div><div class="card-body"><div class="video-load-placeholder" style="height:14px; width:60%; margin-bottom:8px;"></div><div class="video-load-placeholder" style="height:18px; width:90%;"></div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card video-card"><div class="video-load-placeholder"></div><div class="card-body"><div class="video-load-placeholder" style="height:14px; width:60%; margin-bottom:8px;"></div><div class="video-load-placeholder" style="height:18px; width:90%;"></div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card video-card"><div class="video-load-placeholder"></div><div class="card-body"><div class="video-load-placeholder" style="height:14px; width:60%; margin-bottom:8px;"></div><div class="video-load-placeholder" style="height:18px; width:90%;"></div></div></div></div>
     </div>
+
+    <p id="youtubeErrorMsg" class="text-center mt-4" style="display:none; color:#c0392b; font-size:0.9rem;"></p>
 
     <div class="text-center mt-5">
-      <a href="https://youtube.com" target="_blank" class="btn-yt btn">
+      <a href="#" id="youtubeChannelLink" target="_blank" class="btn-yt btn">
         <i class="bi bi-youtube"></i> Subscribe on YouTube
       </a>
     </div>
@@ -609,7 +460,7 @@
           <div class="card-body">
             <p class="sermon-series">Series: When Faith Feels Hard</p>
             <h6>When God Seems Silent</h6>
-            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor David Cruz &nbsp;·&nbsp; Jun 22, 2025</p>
+            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor David Cruz &nbsp;·&nbsp; Jun 22, 2026</p>
             <div class="sermon-actions">
               <a href="#" class="btn-sermon btn"><i class="bi bi-play-circle"></i> Watch</a>
               <a href="#" class="btn-sermon btn"><i class="bi bi-headphones"></i> Listen</a>
@@ -624,7 +475,7 @@
           <div class="card-body">
             <p class="sermon-series">Series: When Faith Feels Hard</p>
             <h6>The Gift of Doubt</h6>
-            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor Sarah Mendoza &nbsp;·&nbsp; Jun 15, 2025</p>
+            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor Sarah Mendoza &nbsp;·&nbsp; Jun 15, 2026</p>
             <div class="sermon-actions">
               <a href="#" class="btn-sermon btn"><i class="bi bi-play-circle"></i> Watch</a>
               <a href="#" class="btn-sermon btn"><i class="bi bi-headphones"></i> Listen</a>
@@ -639,7 +490,7 @@
           <div class="card-body">
             <p class="sermon-series">Series: When Faith Feels Hard</p>
             <h6>Suffering and the Sovereignty of God</h6>
-            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor David Cruz &nbsp;·&nbsp; Jun 8, 2025</p>
+            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor David Cruz &nbsp;·&nbsp; Jun 8, 2026</p>
             <div class="sermon-actions">
               <a href="#" class="btn-sermon btn"><i class="bi bi-play-circle"></i> Watch</a>
               <a href="#" class="btn-sermon btn"><i class="bi bi-headphones"></i> Listen</a>
@@ -654,7 +505,7 @@
           <div class="card-body">
             <p class="sermon-series">Series: Rooted</p>
             <h6>What It Means to Abide in Christ</h6>
-            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor Jun Reyes &nbsp;·&nbsp; Jun 1, 2025</p>
+            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor Jun Reyes &nbsp;·&nbsp; Jun 1, 2026</p>
             <div class="sermon-actions">
               <a href="#" class="btn-sermon btn"><i class="bi bi-play-circle"></i> Watch</a>
               <a href="#" class="btn-sermon btn"><i class="bi bi-headphones"></i> Listen</a>
@@ -669,7 +520,7 @@
           <div class="card-body">
             <p class="sermon-series">Series: Rooted</p>
             <h6>Bearing Fruit in Every Season</h6>
-            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor Sarah Mendoza &nbsp;·&nbsp; May 25, 2025</p>
+            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor Sarah Mendoza &nbsp;·&nbsp; May 25, 2026</p>
             <div class="sermon-actions">
               <a href="#" class="btn-sermon btn"><i class="bi bi-play-circle"></i> Watch</a>
               <a href="#" class="btn-sermon btn"><i class="bi bi-headphones"></i> Listen</a>
@@ -684,7 +535,7 @@
           <div class="card-body">
             <p class="sermon-series">Series: Rooted</p>
             <h6>The Vine and the Branches</h6>
-            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor David Cruz &nbsp;·&nbsp; May 18, 2025</p>
+            <p class="sermon-speaker"><i class="bi bi-person-fill me-1"></i>Pastor David Cruz &nbsp;·&nbsp; May 18, 2026</p>
             <div class="sermon-actions">
               <a href="#" class="btn-sermon btn"><i class="bi bi-play-circle"></i> Watch</a>
               <a href="#" class="btn-sermon btn"><i class="bi bi-headphones"></i> Listen</a>
@@ -710,10 +561,10 @@
       <div class="col-lg-3 col-md-6">
         <div class="footer-brand">
           <span class="brand-cross">&#10011;</span>
-          Victory Baptist Church
+          Victory Baptist
         </div>
         <p style="font-size:0.88rem; margin-bottom:1.2rem;">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
-        <a href="#" class="btn-giving btn mb-3">
+        <a href="give.html" class="btn-giving btn mb-3">
           <i class="bi bi-heart-fill"></i> Give Online
         </a>
         <div class="social-links">
@@ -739,7 +590,7 @@
         </div>
         <div class="footer-contact-item">
           <i class="bi bi-envelope-fill"></i>
-          <span>hello@victorybaptistchurch.ph</span>
+          <span>hello@victorybaptist.ph</span>
         </div>
         <div class="footer-contact-item">
           <i class="bi bi-clock-fill"></i>
@@ -755,7 +606,7 @@
         <a href="#communities">Communities</a>
         <a href="#sermons">Sermons</a>
         <a href="#reach">Missions</a>
-        <a href="#about">About Us</a>
+        <a href="about.html">About Us</a>
         <a href="#">Prayer Request</a>
         <a href="#">Volunteer</a>
       </div>
@@ -810,10 +661,171 @@
   </div>
 </footer>
 
+
+<!-- VIDEO PLAYER MODAL -->
+<div class="modal fade" id="videoPlayerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe id="videoPlayerFrame" src="" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="script.js"></script>
+
+<!-- ============================================================ -->
+<!-- LIVE YOUTUBE FEED — paste your own values into the two lines  -->
+<!-- marked below, then this section auto-updates with new videos -->
+<!-- ============================================================ -->
+<script>
+(function () {
+  // >>> PASTE YOUR VALUES HERE <<<
+  const YT_API_KEY   = "YOUR_YOUTUBE_API_KEY_HERE";   // from Google Cloud Console
+  const YT_CHANNEL_ID = "YOUR_CHANNEL_ID_HERE";        // starts with "UC..."
+  const YT_CHANNEL_URL = "https://www.youtube.com/@victorybaptistph"; // for the Subscribe button
+  const MAX_VIDEOS = 6;
+  // >>> END OF VALUES TO EDIT <<<
+
+  const container = document.getElementById('youtubeVideosContainer');
+  const errorMsg = document.getElementById('youtubeErrorMsg');
+  const subscribeBtn = document.getElementById('youtubeChannelLink');
+  const modalFrame = document.getElementById('videoPlayerFrame');
+  const videoModalEl = document.getElementById('videoPlayerModal');
+  let videoModal;
+
+  subscribeBtn.href = YT_CHANNEL_URL;
+
+  function timeAgo(dateStr) {
+    const diff = (Date.now() - new Date(dateStr).getTime()) / 1000;
+    const units = [[31536000,'year'],[2592000,'month'],[86400,'day'],[3600,'hour'],[60,'minute']];
+    for (const [secs, label] of units) {
+      const val = Math.floor(diff / secs);
+      if (val >= 1) return val + ' ' + label + (val > 1 ? 's' : '') + ' ago';
+    }
+    return 'Just now';
+  }
+
+  function formatViews(n) {
+    n = parseInt(n, 10) || 0;
+    if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+    return n.toString();
+  }
+
+  function openVideo(videoId) {
+    modalFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    if (!videoModal) videoModal = new bootstrap.Modal(videoModalEl);
+    videoModal.show();
+  }
+
+  videoModalEl.addEventListener('hidden.bs.modal', function () {
+    modalFrame.src = ''; // stop playback when modal closes
+  });
+
+  function renderVideos(videos) {
+    container.innerHTML = '';
+    videos.forEach(function (v) {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4';
+      col.innerHTML =
+        '<div class="card video-card" data-video-id="' + v.id + '">' +
+          '<div class="video-thumb">' +
+            '<img src="' + v.thumbnail + '" alt="' + v.title.replace(/"/g, '&quot;') + '"/>' +
+            '<div class="video-play-btn"><i class="bi bi-play-fill"></i></div>' +
+          '</div>' +
+          '<div class="card-body">' +
+            '<p class="video-views"><i class="bi bi-youtube text-danger me-1"></i> ' + v.views + ' views</p>' +
+            '<h6>' + v.title + '</h6>' +
+            '<p class="video-date"><i class="bi bi-calendar3 me-1"></i> ' + v.publishedAgo + '</p>' +
+          '</div>' +
+        '</div>';
+      col.querySelector('.video-card').addEventListener('click', function () {
+        openVideo(v.id);
+      });
+      container.appendChild(col);
+    });
+  }
+
+  function showError(message) {
+    errorMsg.textContent = message;
+    errorMsg.style.display = 'block';
+    container.innerHTML = '';
+  }
+
+  async function loadLatestVideos() {
+    if (!YT_API_KEY || YT_API_KEY.indexOf('YOUR_') === 0 || !YT_CHANNEL_ID || YT_CHANNEL_ID.indexOf('YOUR_') === 0) {
+      showError('YouTube feed not configured yet — add your API key and Channel ID in the script at the bottom of index.html.');
+      return;
+    }
+    try {
+      // Step 1: get the channel's uploads playlist ID
+      const channelRes = await fetch(
+        'https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=' + YT_CHANNEL_ID + '&key=' + YT_API_KEY
+      );
+      const channelData = await channelRes.json();
+      if (!channelData.items || !channelData.items.length) {
+        showError('Could not find that YouTube channel. Double-check the Channel ID.');
+        return;
+      }
+      const uploadsPlaylistId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
+
+      // Step 2: get latest videos from the uploads playlist
+      const playlistRes = await fetch(
+        'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=' + MAX_VIDEOS +
+        '&playlistId=' + uploadsPlaylistId + '&key=' + YT_API_KEY
+      );
+      const playlistData = await playlistRes.json();
+      if (!playlistData.items || !playlistData.items.length) {
+        showError('No videos found on this channel yet.');
+        return;
+      }
+
+      const videoIds = playlistData.items.map(function (item) { return item.snippet.resourceId.videoId; }).join(',');
+
+      // Step 3: get view counts for those videos
+      const statsRes = await fetch(
+        'https://www.googleapis.com/youtube/v3/videos?part=statistics&id=' + videoIds + '&key=' + YT_API_KEY
+      );
+      const statsData = await statsRes.json();
+      const statsMap = {};
+      (statsData.items || []).forEach(function (item) {
+        statsMap[item.id] = item.statistics.viewCount;
+      });
+
+      const videos = playlistData.items.map(function (item) {
+        const snippet = item.snippet;
+        const videoId = snippet.resourceId.videoId;
+        return {
+          id: videoId,
+          title: snippet.title,
+          thumbnail: (snippet.thumbnails.medium || snippet.thumbnails.default).url,
+          publishedAgo: timeAgo(snippet.publishedAt),
+          views: formatViews(statsMap[videoId] || 0)
+        };
+      });
+
+      renderVideos(videos);
+    } catch (err) {
+      console.error(err);
+      showError('Could not load videos right now. Please try again later.');
+    }
+  }
+
+  loadLatestVideos();
+})();
+</script>
 
 </body>
 </html>

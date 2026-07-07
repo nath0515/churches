@@ -468,7 +468,7 @@
     .stat-block .stat-label { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* ENGAGE SECTION */
-    .engage-section { background: var(--cream); padding: 5rem 0; }
+    .engage-section { background: var(--beige); padding: 5rem 0; }
 
     .video-card {
       border: none;
@@ -521,7 +521,7 @@
     .btn-yt:hover { background: #cc0000; color: #fff; }
 
     /* SERMONS SECTION */
-    .sermons-section { background: var(--beige); padding: 5rem 0; }
+    .sermons-section { background: var(--cream); padding: 5rem 0; }
 
     .sermon-card {
       border: none;
